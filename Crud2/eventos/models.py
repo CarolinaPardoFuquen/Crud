@@ -42,6 +42,8 @@ class Eventos(models.Model):
         choices=tipo_eventos,
         default=Presencial,
     )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     # class tipo_evento(models.TextChoices):
     #Presencial=1
@@ -51,4 +53,6 @@ class Eventos(models.Model):
     #updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-    	db_table = 'eventos'
+        db_table = 'eventos'
+        #ordering = ('date_joined',)
+        ordering = ["-created_at"]
