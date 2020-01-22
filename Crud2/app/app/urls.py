@@ -21,7 +21,7 @@ from eventos.views import EventosListado, EventoDetalle, EventoCrear, EventoActu
 
 urlpatterns = [
 
-    # path(r'', admin.site.urls),
+    path('', EventosListado.as_view(template_name = "eventos/index.html"), name='leer'),
     path('admin/', admin.site.urls),
  
     # La ruta 'leer' en donde listamos todos los registros o eventos de la Base de Datos
